@@ -1,0 +1,14 @@
+Generar llave ssh
+ssh-keygen -t ed25519 -C "correo@gmail.com"
+
+Permitir la conexion
+eval "$(ssh-agent -s)"
+
+Agregar la llave ssh a la conexion (/.Carpeta oculta)
+ssh-add ~/.ssh/id_ed25519
+
+Agregar seguridad a la llave 
+sshssh-add -l -E sha256
+
+copiar la llave ssh publica
+clip < ~/.ssh/id_ed25519.pub
